@@ -14,5 +14,27 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "webpack": "^3.10.0"
-  }
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swong194/benchbnb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swong194/benchbnb/issues"
+  },
+  "homepage": "https://github.com/swong194/benchbnb#readme"
 }
