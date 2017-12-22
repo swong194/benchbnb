@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(username, password)
     if @user
       log_in(@user)
-      render json: ['We logged you in']
+      render json: @user
     else
       flash[:errors] = ['invalid credentials']
       render json: flash[:errors]
