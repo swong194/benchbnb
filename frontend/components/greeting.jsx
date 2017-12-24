@@ -12,7 +12,7 @@ class Greeting extends React.Component{
       );
     } else {
       return (
-        <main>
+        <main id='greeting'>
           <Link to='/signup'>Sign Up</Link>
           <Link to='/login'>Sign In</Link>
         </main>

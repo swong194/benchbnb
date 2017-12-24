@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -7,6 +8,8 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
+    this.handleSubmit.bind(this);
+    this.handleChange.bind(this);
   }
 
   handleSubmit(e) {
@@ -25,32 +28,37 @@ class SessionForm extends React.Component {
   render() {
     if (this.props.formType === 'login') {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>Username
-          <input type='text' onChange={this.handleChange('username')}/>
-        </label>
-        <br/>
-        <label>Password
-          <input type='password' onChange={this.handleChange('password')}/>
-        </label>
-        <button value='Log In'></button>
-        </form>
+        <div id='session'>
+          <Link to='/signup'>Sign Up</Link>
+          <form onSubmit={this.handleSubmit}>
+            <label>Username
+              <input type='text' onChange={this.handleChange('username')}/>
+            </label>
+            <br/>
+            <label>Password
+              <input type='password' onChange={this.handleChange('password')}/>
+            </label>
+            <button>Log In</button>
+          </form>
+        </div>
       );
     }
     else {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>Username
-          <input type='text' onChange={this.handleChange('username')}/>
-        </label>
-        <br/>
-        <label>Password
-          <input type='password' onChange={this.handleChange('password')}/>
-        </label>
-        <button value='Sign Up'></button>
-        </form>
+        <div id='session'>
+          <Link to='/login'>Sign In</Link>
+          <form onSubmit={this.handleSubmit}>
+            <label>Username
+              <input type='text' onChange={this.handleChange('username')}/>
+            </label>
+            <br/>
+            <label>Password
+              <input type='password' onChange={this.handleChange('password')}/>
+            </label>
+            <button>Sign Up</button>
+          </form>
+        </div>
       );
-
     }
   }
 }
