@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting_container';
 import SessionFormContainer from './session_form_container';
 import Auth from '../util/route_util.jsx';
+import BenchIndexContainer from './bench_index_container';
 import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
         <Switch>
           <Auth path='/signup' component={SessionFormContainer} />
           <Auth path='/login' component={SessionFormContainer} />
-          <Route path='/' component={GreetingContainer} />
+          <Route exact path='/' component={BenchIndexContainer} />
         </Switch>
       </header>
     </div>
