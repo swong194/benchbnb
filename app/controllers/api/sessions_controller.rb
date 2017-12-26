@@ -6,10 +6,10 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(username, password)
     if @user
       log_in(@user)
-      render json: @user
+      render :show
     else
       flash[:errors] = ['invalid credentials']
-      render json: flash[:errors]
+      render json: flash[:errors], status: 422
     end
   end
 
@@ -18,8 +18,7 @@ class Api::SessionsController < ApplicationController
       log_out!
       render json: ['we logged you out']
     else
-      render json: 404
+      render json: ['eror in logging out'], status: 422
     end
   end
-
 end
