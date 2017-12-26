@@ -1,17 +1,20 @@
 import React from 'react';
 import GreetingContainer from './greeting_container';
 import SessionFormContainer from './session_form_container';
-import { Route } from 'react-router-dom';
+import Auth from '../util/route_util.jsx';
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
       <header>
         <h1>Bench BnB</h1>
-        <Route exact path='/' component={GreetingContainer} />
+        <Switch>
+          <Auth path='/signup' component={SessionFormContainer} />
+          <Auth path='/login' component={SessionFormContainer} />
+          <Route path='/' component={GreetingContainer} />
+        </Switch>
       </header>
-      <Route path="/login" component={SessionFormContainer} />
-      <Route path="/signup" component={SessionFormContainer} />
     </div>
   );
 };
