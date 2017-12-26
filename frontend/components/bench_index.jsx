@@ -9,11 +9,12 @@ class BenchIndex extends React.Component {
   render(){
     let benches;
     if(this.props.benches.length !== 0){
-      benches = this.props.benches.map(bench => <BenchIndexItem bench={bench}/> );
+      benches = this.props.benches.map(
+        bench => <BenchIndexItem bench={bench}/>
+      );
     } else {
       benches = <li>LOADING...</li>;
     }
-
     return (
       <main id='benches'>
       {benches}
